@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --main-color:#215fc0;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background-color: #eeeeee;
+  margin: 0;
+}
+
+
+.navbar{
+  background-color: var(--main-color);
+  height: 10vh;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 30px;
+  justify-content: space-between;
+  box-shadow: 0px 15px 10px -15px #ced3ff;    
+  z-index: 10;
+}
+
+.navbar h1{
+  margin: 0;
+  letter-spacing: 1.5px;
+}
+
+.navbar h1:hover{
+  margin: 0;
+  text-shadow: 0 0 3px white, 0 0 3px var(--main-color);
+  cursor: pointer;
+}
+
+.navbar i{
+  font-size: 30px;
+}
+
+.navbar i:hover{
+  color: var(--main-color);
+  cursor: pointer;
+  transform: scale(1.05);
+
+}
+
+.main-section{
+  display: flex;
+  flex-direction: row;
+  height: 90vh;
+  width: 100%;
+}
+
+.drawer-section{
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  background-color: white;
+  height: 89.5vh;
+  margin-top: 0.5vh;
+}
+
+.drawer-section i{
+  margin-right: 1vw;
+}
+
+.drawer-section h4{
+  font-weight: 400;
+}
+
+.horizontal-line{
+  background-color: var(--main-color);
+  height: 1px;
+  margin: 1vh 0;
+}
+
+.drawer-item-space{
+ display: flex;
+ flex-direction: column;
+ padding-left: 2vw;
+}
+
+.drawer-item-space-top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+ 
+ }
+ .drawer-item-space-bottom{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+ }
+
+.drawer-item-space-bottom meter{
+  width: 70%;
+}
+
+
+.drawer-item-space-bottom h4{
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.drawer-item{
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  padding-left: 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.drawer-item-active{
+  border-top-right-radius: 60px;
+  border-bottom-right-radius: 60px;
+  padding-left: 2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: var(--main-color);
+  color: white;
+}
+
+.drawer-item-add label{
+  background-color: white;
+  border: solid var(--main-color) 1px;
+  border-radius: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+ }
+
+ .drawer-item-add label:hover{
+  transform: scale(1.01);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+  background-color: #EFEFEF;
+  cursor: pointer;
+ }
+
+
+
+ .drawer-item-add i{
+   font-size: 20px;
+   color: var(--main-color);
+ }
+
+.drawer-item:hover{
+  background-color: #eeeeee;
+}
+
+
+#file {
+	display: none;
+}
+
+
+
+.file-section{
+  width: 100%;
+  height: 90vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.file-section h1{
+  font-size: 20px;
+  margin-left: 2vw;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.file-title-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-self: center;
+}
+
+.file-title-section h2{
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#directory-path{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 2vw;
+}
+
+.directory-path-item-active{
+  color: var(--main-color);
+  text-decoration: underline;
+
+}
+
+.directory-path-item:hover{
+  transform: scale(1.05);
+ cursor: pointer;
+ color: var(--main-color);
+  text-decoration: underline;
+}
+
+.directory-path-sep{
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+}
+
+.file-title-create{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  padding: 0px 16px;
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  color: white;
+  margin-right: 0.5vw;
+}
+
+.file-title-create:hover{
+  transform: scale(1.01);
+
+  cursor: pointer;
+  
+}
+
+.file-head-section{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 3vw;
+  margin: 0 0.5vw 0.5vw 10px;
+}
+
+.file-items {
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 3vw;
+  margin: 0 0.5vw 0.5vw 10px;
+}
+
+.file-items:hover {
+  color: var(--main-color);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 3vw;
+  margin: 0 0.5vw 0.5vw 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.file-items i{
+  width: 3%;
+  margin: 0;
+  font-size: 20px;
+
+}
+
+.file-items h4{
+  font-weight: 600;
+}
+
+.file-item-name{
+  width: 22%;
+ text-align: start;
+ white-space: nowrap; 
+ overflow:hidden;
+ text-overflow: ellipsis;
+  padding-right: 2%;
+}
+
+.file-item-type{
+  width: 23%;
+  text-align: start;
+ white-space: nowrap; 
+ overflow:hidden;
+ text-overflow: ellipsis;
+  padding-right: 2%;
+ }
+
+ .file-item-update{
+  width: 25%;
+
+  text-align: start;
+ }
+
+ .file-item-size{
+  width: 13%;
+  text-align: start;
+ }
+
+ .file-item-icons{
+  width: 10%;
+  text-align: start;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+ }
+
+ .file-item-icon{
+  z-index: 1; }
+ .file-item-icon:hover{
+  transform: scale(1.2);
+
+ }
+
+ .file-head-name{
+  width: 27%;
+  text-align: start;
+ }
+ 
+ .file-head-type{
+   width: 25%;
+   text-align: start;
+  }
+ 
+  .file-head-update{
+   width: 25%;
+ 
+   text-align: start;
+  }
+ 
+  .file-head-size{
+   width: 13%;
+   text-align: start;
+  }
+
+  .file-head-icons{
+    width: 10%;
+    text-align: start;
+   }
+
+   #file-section-empty{
+     width: 100%;
+     height: 90vh;
+     display: none;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+    
+   }
+
+   #file-section-empty h1{
+    font-size: 20px;
+    font-weight: 500;   
+    margin: 0;
+  }
+
+   #file-section-empty h2{
+    font-size: 16px;
+    font-weight: 400;   
+    margin: 0;
+  }

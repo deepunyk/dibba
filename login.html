@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+		integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/loginstyle.css">
+
+	<title>DIBBA</title>
+
+	<script>
+		function loginUser() {
+
+
+			var formData = new FormData();
+
+			if(document.getElementById("uname").value.length>2 && document.getElementById("password").value.length>2){
+			formData.append("uname", document.getElementById("uname").value);
+			formData.append("password", document.getElementById("password").value);
+			var xhttp = new XMLHttpRequest();
+
+			xhttp.open("POST", "http://127.0.0.1/web/php/login.php", true);
+
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+
+					if(this.responseText != "0"){
+						sessionStorage.setItem('user_id', this.responseText);
+						window.location.href = "home.html";
+
+					}else{
+						alert("Invalid login credentials.");
+
+					}
+				}
+			};
+
+			xhttp.send(formData);
+		}
+		else{
+		alert("Please enter valid login credentials");
+	}
+	}
+
+		function registerUser() {
+
+
+			var formData = new FormData();
+
+			console.log(document.getElementById("runame").value);
+			console.log(document.getElementById("rpassword").value);
+			console.log(document.getElementById("rcpassword").value);
+			console.log(document.getElementById("remail").value);
+
+			if(document.getElementById("runame").value.length>2 && document.getElementById("rpassword").value.length>2 && document.getElementById("rcpassword").value.length>2&&document.getElementById("remail").value.length>2){
+
+			formData.append("uname", document.getElementById("runame").value);
+			formData.append("password", document.getElementById("rpassword").value);
+			formData.append("cpassword", document.getElementById("rcpassword").value);
+			formData.append("email", document.getElementById("remail").value);
+			var xhttp = new XMLHttpRequest();
+
+			xhttp.open("POST", "http://127.0.0.1/web/php/register.php", true);
+
+			xhttp.onreadystatechange = function () {
+				if (this.readyState == 4 && this.status == 200) {
+					console.log(this.responseText);
+					if(this.responseText == '1'){
+						alert("Your DIBBA has been successfully created. Please login to continue.");
+						window.location.href = "home.html";
+					}else{
+						alert("Oops! Something went wrong. Please try again.");
+
+					}
+				}
+			};
+
+			xhttp.send(formData);
+		}else{
+			alert("Please enter valid details");
+		}
+		}
+	</script>
+
+</head>
+
+<body>
+
+	<div class="container" id="container">
+
+
+		<div class="form-container sign-up-container">
+			<form action="#">
+				<h1>REGISTER</h1>
+				<br>
+				<input type="text" id="runame" placeholder="User Name" />
+				<input type="email" id="remail" placeholder="Email" />
+				<input type="password" id="rpassword" placeholder="Password" />
+				<input type="password" id="rcpassword" placeholder="Confirm Password" />
+				<button onclick="registerUser()">Register</button>
+			</form>
+		</div>
+		<div class="form-container sign-in-container">
+			<form action="#">
+				<h1>SIGN IN</h1>
+				<input type="text" id="uname" placeholder="User Name" />
+				<input type="password" id="password" placeholder="Password" />
+				<button onclick="loginUser()">Sign In</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Safe With Us</h1>
+					<br>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>FIRST TIME?</h1>
+					<p>Join by clicking here <i class="fas fa-arrow-alt-circle-down"></i></p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/login.js"></script>
+</body>
+
+</html>
